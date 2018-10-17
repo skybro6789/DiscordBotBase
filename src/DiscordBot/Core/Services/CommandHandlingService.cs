@@ -43,6 +43,7 @@ namespace DiscordBot.Services
 
             var context = new SocketCommandContext(_client, message);
             var result = await _commands.ExecuteAsync(context, argPos, _provider);
+            Console.WriteLine($"{message.Author.Username} executed the command {message.ToString()}. Result: {result}");
 
             if (result.Error.HasValue && 
                 result.Error.Value != CommandError.UnknownCommand)
