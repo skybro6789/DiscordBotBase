@@ -28,7 +28,7 @@ namespace DiscordBot.Services
         public async Task InitializeAsync(IServiceProvider provider)
         {
             _provider = provider;
-            await _commands.AddModulesAsync(Assembly.GetEntryAssembly());
+            await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), services: null);
         }
 
         private async Task MessageReceived(SocketMessage rawMessage)
